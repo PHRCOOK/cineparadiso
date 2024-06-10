@@ -12,6 +12,7 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extend: true }));
 
 app.post("/create_preference", async (req, res) => {
   try {
@@ -47,6 +48,15 @@ app.post("/create_preference", async (req, res) => {
     console.log(error);
     res.status(500).json({ error: "Error al crear la preferencia" });
   }
+});
+
+app.options("/", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, OPTOIONS, PATCH, DELETE, POST, PUT"
+  );
+  res.sendStatus(200);
 });
 
 app.listen(port, () => {
