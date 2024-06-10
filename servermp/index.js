@@ -51,7 +51,10 @@ app.post("/create_preference", async (req, res) => {
 });
 
 app.options("/", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://servermp-jhgwgsrnl-pablo-rubios-projects.vercel.app"
+  );
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, OPTOIONS, PATCH, DELETE, POST, PUT"
