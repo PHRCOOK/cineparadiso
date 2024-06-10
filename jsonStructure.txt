@@ -1,0 +1,53 @@
+indicaciones para pablo:
+el 'componente' LocalStorage, no es un componente, es un Custom Hook. renombrarlo a useLocalStorage,
+y ponerlo dentro de la carpeta customHooks
+
+
+--------
+TABLA TIMETABLE:
+timetable: 
+      {
+        afternoon: ["12:30", "15:30"],
+		    evening: ["18:30", "21:30"]
+      }
+crear la API para cargarlos desde pagina de administracion asi como tener un endpoint para obtener los datos
+
+
+TABLA PRICES:
+prices: 
+    [
+      {
+        type: "Tarifa general"
+        price: 6500
+      },
+      {
+        type: "Mayores de 65 y Menores de 12"
+        price: 5750
+      }
+    ]
+crear la API para cargarlos desde pagina de administracion asi como tener un endpoint para obtener los datos
+
+
+TABLA THEATERS:
+theaterId
+seats: [0, 1 , 2, ......., 185] (true/false para saber si esta ocupada la butaca)
+isAvailable: true/false
+isFull: true/false
+
+
+TABLA TRAILERS: (se actualiza con un boton en la pagina de administracion)
+debe contener un campo con un array de "key"
+ese "key" se obtiene de la API de TMDB.
+del siguiente endpoint:
+https://api.themoviedb.org/3/movie/{id de pelicula}/videos?language=es-ES&api_key={api_key}
+ese endpoint devuelve varios videos, en 'type' debe figurar trailer, guardar en la tabla solo 1, 
+referente a esa pelicula. en caso de no encontrar 'trailer' en 'type', que devuelva el 'teaser', solo '1',
+y sino, nada.
+seran un array con los "key" de los videos de cartelera.
+
+Aclaracion: ese "key" es parte del link de youtube. yo con ese "key" me sirve para armar la url del video.
+te muestro un ejemplo:
+https://www.youtube.com/embed/hEnr6Ewpu_U?si=A6MpsJXJ7WJE401P?autoplay=1&mute=1&widgetid=1
+hEnr6Ewpu_U seria una "key
+
+Conslusion: crear tabla y API.

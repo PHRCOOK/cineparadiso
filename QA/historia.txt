@@ -1,0 +1,29 @@
+Historia de usuario.
+
+c18-43-n-java-react
+
+Historia de Usuario: Selección de asientos como cliente, quiero seleccionar los asientos durante la compra de entradas, para asegurarme de tener la mejor vista y experiencia en el cine.
+
+Historia de Usuario: Compra de entradas, como usuario ocasional, quiero un proceso de compra de entradas sencillo y rápido, para minimizar el tiempo que paso en la web app y asegurar mi entrada sin complicaciones. Quiero recibir una confirmación de la compra, incluyendo el número de pedido, la fecha y hora de la función, los asientos seleccionados y el precio total. Quiero poder cancelar o modificar mi compra, siempre que lo haga dentro del plazo establecido por la política de la web app.
+
+Historia de Usuario: Ofertas y Promociones, quiero recibir notificaciones sobre promociones y descuentos, para aprovechar los mejores precios en entradas de cine.
+
+Historia de Usuario: acceso a reseñas, quiero leer reseñas y calificaciones de películas antes de comprar mi entrada, para tomar una decisión informada basada en las opiniones de otros espectadores.
+
+Historia de Usuario: gestión de cuenta, quiero gestionar fácilmente mi cuenta, historial de compras y preferencias, para personalizar mi experiencia en la plataforma.
+
+Historia de Usuario: soporte al cliente, quiero acceso rápido a soporte al cliente, para resolver cualquier duda o problema que pueda tener durante el uso de la webapp.
+
+Como administrador de la webapp: quiero poder gestionar la cartelera de películas, incluyendo agregar, eliminar y modificar películas.
+
+Como administrador de la webapp: quiero poder gestionar las funciones de cada película, incluyendo agregar, eliminar y modificar funciones.
+
+Como administrador de la web app: quiero poder gestionar las salas de cine, incluyendo agregar, eliminar y modificar salas.
+
+Como administrador de la web app: quiero poder gestionar los usuarios, incluyendo crear, eliminar y modificar usuarios.
+
+Como administrador de la web app: quiero poder enviar promociones y ofertas a los usuarios.
+
+https://docs.google.com/document/d/1V5N0yd16G72WyHSu2XDltyPk3p0e-a6kS-kdv2qT6ng/edit?usp=sharing
+
+ldsfhigjkjndfkñjvnñkfnhvñksdnfñkvn

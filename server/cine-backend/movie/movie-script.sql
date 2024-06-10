@@ -1,0 +1,8 @@
+CREATE DATABASE movie;
+USE movie;
+CREATE TABLE movie (
+    id BIGINT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
