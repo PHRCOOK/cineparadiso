@@ -12,21 +12,7 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-const sendPreferencesToUpdateTableDB = (preferences) => {
-  if (preferences.date && preferences.hour && preferences.seats.length > 0) {
-    fetch("https://api-cine-paradiso.vercel.app/update-seatsdateshours", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(preferences),
-    })
-      .then(() => console.log("Preferences updated successfully")) // Cambia a un manejo adecuado de éxito
-      .catch((err) => console.error("Error updating preferences:", err)); // Cambia a un manejo adecuado de errores
-  }
-};
+app.use(express.urlencoded({ extend: true }));
 
 app.post("/create_preference", async (req, res) => {
   try {
@@ -46,7 +32,7 @@ app.post("/create_preference", async (req, res) => {
         },
       ],
       back_urls: {
-        success: "https://tu-servidor.com/update-table", // URL de éxito modificada
+        success: "https://www.google.com/",
         failure: "https://www.google.com/",
         pending: "https://www.google.com/",
       },
@@ -65,22 +51,14 @@ app.post("/create_preference", async (req, res) => {
 });
 
 app.options("/", (req, res) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://servermp-jhgwgsrnl-pablo-rubios-projects.vercel.app"
-  );
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
     "Access-Control-Allow-Methods",
-    "GET, OPTIONS, PATCH, DELETE, POST, PUT"
+    "GET, OPTOIONS, PATCH, DELETE, POST, PUT"
   );
   res.sendStatus(200);
 });
 
 app.listen(port, () => {
   console.log(`Servidor en el puerto ${port}`);
-});
-
-app.post("/update-table", (req, res) => {
-  sendPreferencesToUpdateTableDB(req.body); // Aquí ejecuta la función con los datos del body
-  res.sendStatus(200); // Envía una respuesta exitosa al cliente
 });
