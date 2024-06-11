@@ -32,7 +32,7 @@ app.post("/create_preference", async (req, res) => {
         },
       ],
       back_urls: {
-        success: "https://www.google.com/",
+        success: "https://tu-servidor.com/payment_success",
         failure: "https://www.google.com/",
         pending: "https://www.google.com/",
       },
@@ -47,6 +47,18 @@ app.post("/create_preference", async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Error al crear la preferencia" });
+  }
+});
+
+app.post("/payment_success", async (req, res) => {
+  try {
+    // Aquí puedes realizar acciones adicionales cuando el pago ha sido exitoso, como actualizar la base de datos
+    sendPreferencesToUpdateTableDBFromPayments();
+
+    res.sendStatus(200);
+  } catch (error) {
+    console.error("Error en la notificación de éxito de pago:", error);
+    res.status(500).send("Error en la notificación de éxito de pago");
   }
 });
 
