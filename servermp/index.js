@@ -53,7 +53,7 @@ app.post("/create_preference", async (req, res) => {
 app.post("/payment_success", async (req, res) => {
   try {
     // Realizar acciones adicionales cuando el pago ha sido exitoso
-    // sendPreferencesToUpdateTableDBFromPayments();
+    sendPreferencesToUpdateTableDBFromPayments();
 
     // Devolver respuesta de éxito
     res.status(200).send("Pago exitoso");
