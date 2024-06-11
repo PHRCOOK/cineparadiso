@@ -32,7 +32,7 @@ app.post("/create_preference", async (req, res) => {
         },
       ],
       back_urls: {
-        success: "https://cine-paradiso.vercel.app/payment_success",
+        success: "https://cine-paradiso.vercel.app",
         failure: "https://cine-paradiso.vercel.app/pagos",
         pending: "https://www.google.com/",
       },
