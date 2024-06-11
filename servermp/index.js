@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extend: true }));
+app.use(express.urlencoded({ extended: true }));
 
 app.post("/create_preference", async (req, res) => {
   try {
@@ -32,7 +32,7 @@ app.post("/create_preference", async (req, res) => {
         },
       ],
       back_urls: {
-        success: "https://cine-paradiso.vercel.app",
+        success: "https://cine-paradiso.vercel.app?payment_success=true",
         failure: "https://cine-paradiso.vercel.app/pagos",
         pending: "https://www.google.com/",
       },
@@ -52,10 +52,11 @@ app.post("/create_preference", async (req, res) => {
 
 app.post("/payment_success", async (req, res) => {
   try {
-    // Aquí puedes realizar acciones adicionales cuando el pago ha sido exitoso, como actualizar la base de datos
-    sendPreferencesToUpdateTableDBFromPayments();
+    // Realizar acciones adicionales cuando el pago ha sido exitoso
+    // sendPreferencesToUpdateTableDBFromPayments();
 
-    res.sendStatus(200);
+    // Devolver respuesta de éxito
+    res.status(200).send("Pago exitoso");
   } catch (error) {
     console.error("Error en la notificación de éxito de pago:", error);
     res.status(500).send("Error en la notificación de éxito de pago");
@@ -66,7 +67,7 @@ app.options("/", (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
     "Access-Control-Allow-Methods",
-    "GET, OPTOIONS, PATCH, DELETE, POST, PUT"
+    "GET, OPTIONS, PATCH, DELETE, POST, PUT"
   );
   res.sendStatus(200);
 });
