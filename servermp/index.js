@@ -53,7 +53,7 @@ app.post("/create_preference", async (req, res) => {
 app.options("/", (req, res) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://cineparadiso-756j3sf5o-pablo-rubios-projects.vercel.app/"
+    "https://servermp-jhgwgsrnl-pablo-rubios-projects.vercel.app"
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
