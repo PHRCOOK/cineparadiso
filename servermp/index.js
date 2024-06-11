@@ -51,7 +51,10 @@ app.post("/create_preference", async (req, res) => {
 });
 
 app.options("/", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://cineparadiso-756j3sf5o-pablo-rubios-projects.vercel.app/"
+  );
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, OPTOIONS, PATCH, DELETE, POST, PUT"
